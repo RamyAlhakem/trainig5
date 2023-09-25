@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:trainig5/Cartcontroller.dart';
-import 'package:trainig5/Pageone.dart';
+
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:trainig5/splashscreen.dart';
 
 late SharedPreferences pref;
 void main() async {
@@ -18,9 +19,9 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
       create: (context) => Cartcontroller(),
-      child: MaterialApp(
+      child: const MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: Pageone(),
+        home: Splashscreen(),
       ),
     );
   }

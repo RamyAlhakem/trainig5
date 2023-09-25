@@ -3,9 +3,6 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:trainig5/Mydata.dart';
 import 'package:trainig5/main.dart';
-import 'package:trainig5/users.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'package:http/http.dart' as http;
 
 class Cartcontroller extends ChangeNotifier {
   List<MyData> data = [];
@@ -29,8 +26,10 @@ class Cartcontroller extends ChangeNotifier {
     var keyjson = pref.getString('id');
     List<Map<String, dynamic>> jsonList =
         (jsonDecode(keyjson!)).cast<Map<String, dynamic>>();
-    List<MyData> data  =
+    List<MyData> data =
         jsonList.map((i) => MyData.fromJson(i)).toList().cast<MyData>();
     return data;
   }
+
+  
 }
